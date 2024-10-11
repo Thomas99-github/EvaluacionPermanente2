@@ -1,0 +1,19 @@
+<div class="container my-5">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">{{ productoSeleccionado?.nombre }}</h3>
+    </div>
+    <div class="card-body">
+      <h5 class="card-subtitle mb-2 text-muted">Categoría: {{ productoSeleccionado?.categoria }}</h5>
+      <p class="card-text">
+        <strong>Descripción:</strong> {{ productoSeleccionado?.descripcion }}
+      </p>
+      <p class="card-text">
+        <strong>Precio:</strong> {{ productoSeleccionado?.precio | currency }}
+      </p>
+    </div>
+    <div class="card-footer">
+      <a href="/" class="btn btn-primary">Volver a la lista</a>
+    </div>
+  </div>
+</div>

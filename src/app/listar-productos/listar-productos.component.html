@@ -1,0 +1,29 @@
+<div class="container">
+   <div class="mb-3">
+     <label for="categoria" class="form-label">Filtrar por categoría:</label>
+     <select id="categoria" class="form-select" [(ngModel)]="categoriaSeleccionada">
+       <option value="">Todas</option>
+       <option *ngFor="let categoria of categorias">{{ categoria }}</option>
+     </select>
+   </div>
+ 
+   <table class="table table-striped">
+     <thead>
+       <tr>
+         <th>Nombre</th>
+         <th>Categoría</th>
+         <th>Precio</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let producto of productosFiltrados" [ngClass]="{ 'resaltado': producto.precio > 1000 }">
+         <td>{{ producto.nombre }}</td>
+         <td>{{ producto.categoria }}</td>
+         <td>{{ producto.precio | currency }}</td>
+         <td>
+            <button class="btn btn-danger" (click)="eliminarProducto(producto.id)">Eliminar</button>
+          </td>
+       </tr>
+     </tbody>
+   </table>
+ </div>
